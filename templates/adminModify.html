@@ -1,0 +1,7 @@
+{% extends "admin template.html" %}
+{% block content2 %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+<a class="pt-5"><strong>{{ message }}</strong></a>
+{{ render_form(form) }}
+{% endblock %}

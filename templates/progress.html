@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}MnM - Overzicht{% endblock %}
+{% block content %}
+    {% for para in message %}
+     <p>{{para}}</p>
+ {% endfor %}
+    <br>
+
+    <p id="table">Laden...</p>
+
+<script>
+    var table = document.getElementById("table");
+    fetch("{{ url_for('table') }}")
+        .then(response => {
+                response.text().then(t => {table.innerHTML = t})
+            });
+</script>
+
+    <progress value={{ progressbar }} max="100"> {{ progressbar }} </progress>
+
+{% endblock %}

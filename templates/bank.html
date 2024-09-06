@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}MnM - Overzicht{% endblock %}
+{% block content %}
+<p id="table">Laden...</p>
+
+<script>
+    var table = document.getElementById("table");
+
+    setInterval(() => {
+        fetch("{{ url_for('table') }}")
+        .then(response => {
+                response.text().then(t => {table.innerHTML = t})
+            });
+        }, 1000);
+</script>
+{% endblock %}

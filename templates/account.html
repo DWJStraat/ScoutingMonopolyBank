@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}MnM - {{ user }}'s account{% endblock %}
+{% block content %}
+
+    <p>Naam : {{ user }}</p>
+    <p>Geld: {{ balance }}</p>
+    {{ render_form(form) }}
+
+{% endblock %}
